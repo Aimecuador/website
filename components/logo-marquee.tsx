@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import Image from "next/image"
 
 interface LogoMarqueeProps {
   logos: {
@@ -60,7 +59,7 @@ export default function LogoMarquee({ logos, speed = 30 }: LogoMarqueeProps) {
   }, [isPaused, speed])
 
   return (
-    <div className="overflow-hidden relative w-full">
+    <div className="w-full overflow-hidden h-36">
       <div
         ref={marqueeRef}
         className="flex whitespace-nowrap"
@@ -70,9 +69,9 @@ export default function LogoMarquee({ logos, speed = 30 }: LogoMarqueeProps) {
         {duplicatedLogos.map((logo, index) => (
           <div
             key={`${logo.name}-${index}`}
-            className="inline-flex items-center justify-center bg-white rounded-lg p-4 mx-4 h-32 min-w-[200px] shadow-sm hover:shadow-md transition-shadow duration-300"
+            className="inline-flex items-center justify-center bg-transparent rounded-lg py-4 px-2 mx-1 h-32 min-w-[200px] shadow-sm hover:shadow-md transition-shadow duration-300"
           >
-            <Image
+            <img
               src={logo.image || "/placeholder.svg"}
               alt={logo.name}
               width={120}
