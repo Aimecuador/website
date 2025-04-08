@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import SocialIcons from "@/components/social-icons"
+import GoogleMapWrapper from "@/components/google-map"
 
 export default function ContactoPage() {
   return (
@@ -114,14 +115,12 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <section className="py-8 mt-8">
-        <h2 className="text-2xl font-bold mb-6">Ubicación</h2>
-        <div className="rounded-lg overflow-hidden h-[400px] bg-muted">
-          {/* Aquí se puede integrar un mapa de Google Maps o similar */}
-          <div className="w-full h-full flex items-center justify-center bg-muted">
-            <p className="text-muted-foreground">Mapa de ubicación</p>
-          </div>
+      <section className="py-8">
+        <div className="flex items-center gap-3 mb-6">
+          <MapPin className="h-6 w-6 text-primary" />
+          <h2 className="text-2xl font-bold">Ubicación</h2>
         </div>
+        <GoogleMapWrapper />
       </section>
     </main>
   )

@@ -1,6 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import {
   Users,
   History,
@@ -13,120 +13,138 @@ import {
   Lightbulb,
   Heart,
   ChevronRight,
-} from "lucide-react"
-import { Award } from "lucide-react"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+} from "lucide-react";
+import { Award } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const valoresYPrincipios = [
+  {
+    id: "excelencia",
+    title: "Excelencia Profesional",
+    description:
+      "Promovemos los más altos estándares de calidad y competencia técnica en la práctica de la ingeniería de minas.",
+    icon: <Award className="h-10 w-10" />,
+  },
+  {
+    id: "etica",
+    title: "Ética",
+    description:
+      "Actuamos con integridad, honestidad y transparencia en todas nuestras actividades profesionales.",
+    icon: <Shield className="h-10 w-10" />,
+  },
+  {
+    id: "sostenibilidad",
+    title: "Sostenibilidad",
+    description:
+      "Impulsamos prácticas mineras que equilibran el desarrollo económico con la protección ambiental y el bienestar social.",
+    icon: <Leaf className="h-10 w-10" />,
+  },
+  {
+    id: "innovacion",
+    title: "Innovación",
+    description:
+      "Fomentamos la investigación, el desarrollo y la aplicación de nuevas tecnologías y metodologías en el sector minero.",
+    icon: <Lightbulb className="h-10 w-10" />,
+  },
+  {
+    id: "colaboracion",
+    title: "Colaboración",
+    description:
+      "Trabajamos en conjunto con todos los actores del sector para lograr objetivos comunes y generar sinergias.",
+    icon: <Users className="h-10 w-10" />,
+  },
+  {
+    id: "responsabilidad",
+    title: "Responsabilidad Social",
+    description:
+      "Promovemos el compromiso con las comunidades y el desarrollo social en las áreas de influencia de la actividad minera.",
+    icon: <Heart className="h-10 w-10" />,
+  },
+];
 
 export default function NosotrosPage() {
-  // Datos de valores y principios
-  const valoresYPrincipios = [
-    {
-      id: "excelencia",
-      title: "Excelencia Profesional",
-      description:
-        "Promovemos los más altos estándares de calidad y competencia t��cnica en la práctica de la ingeniería de minas.",
-      icon: <Award className="h-10 w-10" />,
-    },
-    {
-      id: "etica",
-      title: "Ética",
-      description: "Actuamos con integridad, honestidad y transparencia en todas nuestras actividades profesionales.",
-      icon: <Shield className="h-10 w-10" />,
-    },
-    {
-      id: "sostenibilidad",
-      title: "Sostenibilidad",
-      description:
-        "Impulsamos prácticas mineras que equilibran el desarrollo económico con la protección ambiental y el bienestar social.",
-      icon: <Leaf className="h-10 w-10" />,
-    },
-    {
-      id: "innovacion",
-      title: "Innovación",
-      description:
-        "Fomentamos la investigación, el desarrollo y la aplicación de nuevas tecnologías y metodologías en el sector minero.",
-      icon: <Lightbulb className="h-10 w-10" />,
-    },
-    {
-      id: "colaboracion",
-      title: "Colaboración",
-      description:
-        "Trabajamos en conjunto con todos los actores del sector para lograr objetivos comunes y generar sinergias.",
-      icon: <Users className="h-10 w-10" />,
-    },
-    {
-      id: "responsabilidad",
-      title: "Responsabilidad Social",
-      description:
-        "Promovemos el compromiso con las comunidades y el desarrollo social en las áreas de influencia de la actividad minera.",
-      icon: <Heart className="h-10 w-10" />,
-    },
-  ]
-
   return (
     <main className="container mx-auto py-12">
       <section className="mb-16">
-        <div className="flex items-center space-x-2 mb-6">
-          <div className="h-1 w-10 bg-primary"></div>
-          <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Sobre Nosotros</span>
-        </div>
-        <h1 className="text-4xl font-bold mb-8">Quiénes Somos</h1>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           <div>
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="h-1 w-10 bg-primary"></div>
+              <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+                Sobre Nosotros
+              </span>
+            </div>
+            <h1 className="text-4xl font-bold mb-8">Quiénes Somos</h1>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <Users className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                 <p>
-                  La Asociación de Ingenieros en Minas del Ecuador (AIME) es una organización profesional que agrupa a
-                  los ingenieros en minas del país, comprometida con el desarrollo técnico, científico y ético de la
-                  minería ecuatoriana.
+                  La Asociación de Ingenieros en Minas del Ecuador (AIME) es una
+                  organización profesional que agrupa a los ingenieros en minas
+                  del país, comprometida con el desarrollo técnico, científico y
+                  ético de la minería ecuatoriana.
                 </p>
               </div>
               <p>
-                Nuestro propósito es fomentar la excelencia profesional, promover el intercambio de conocimientos, y
-                fortalecer el rol del ingeniero en minas como un actor clave en la sostenibilidad y competitividad del
-                sector minero nacional.
+                Nuestro propósito es fomentar la excelencia profesional,
+                promover el intercambio de conocimientos, y fortalecer el rol
+                del ingeniero en minas como un actor clave en la sostenibilidad
+                y competitividad del sector minero nacional.
               </p>
             </div>
           </div>
-          <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-            <Image src="/placeholder.svg?height=800&width=600" alt="Ingenieros de AIME" fill className="object-cover" />
+          <div className="relative rounded-lg overflow-hidden shadow-lg">
+            <img
+              src="/images/nosotros/directiva-aime.webp"
+              alt="Directiva de AIME"
+              className=" w-full h-auto"
+              width={1200}
+              height={800}
+            />
           </div>
         </div>
       </section>
 
       <section id="historia" className="mb-16">
-        <div className="flex items-center space-x-2 mb-6">
-          <div className="h-1 w-10 bg-primary"></div>
-          <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-            Nuestra Trayectoria
-          </span>
-        </div>
-        <h2 className="text-3xl font-bold mb-6">Historia</h2>
         <div className="grid gap-8 md:grid-cols-2 items-center">
           <div className="order-2 md:order-1">
-            <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
-              <Image
+            <div className="relative rounded-lg overflow-hidden shadow-lg">
+              <img
                 src="/images/nosotros/historia-aime.webp"
                 alt="Fundación histórica de AIME"
-                fill
-                className="object-cover"
+                className="object-cover w-full h-auto"
+                width={800}
+                height={600}
               />
             </div>
           </div>
           <div className="order-1 md:order-2">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="h-1 w-10 bg-primary"></div>
+              <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+                Nuestra Trayectoria
+              </span>
+            </div>
+            <h2 className="text-3xl font-bold mb-6">Historia</h2>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <History className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                 <p>
-                  La Asociación fue fundada en el año 1989 con el objetivo de representar y apoyar a los profesionales
-                  de la ingeniería en minas en el Ecuador, consolidando un espacio de encuentro, formación y defensa de
-                  los intereses gremiales.
+                  La Asociación fue fundada en el año 1989 con el objetivo de
+                  representar y apoyar a los profesionales de la ingeniería en
+                  minas en el Ecuador, consolidando un espacio de encuentro,
+                  formación y defensa de los intereses gremiales.
                 </p>
               </div>
               <p>
-                A lo largo de los años, ha trabajado en estrecha colaboración con instituciones públicas, privadas y
-                académicas, participando activamente en el desarrollo del sector minero del país.
+                A lo largo de los años, ha trabajado en estrecha colaboración
+                con instituciones públicas, privadas y académicas, participando
+                activamente en el desarrollo del sector minero del país.
               </p>
             </div>
           </div>
@@ -136,7 +154,9 @@ export default function NosotrosPage() {
       <section id="mision-vision" className="mb-16">
         <div className="flex items-center space-x-2 mb-6">
           <div className="h-1 w-10 bg-primary"></div>
-          <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Nuestro Propósito</span>
+          <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+            Nuestro Propósito
+          </span>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
           <div className="bg-muted p-8 rounded-lg shadow-sm border-l-4 border-primary">
@@ -145,8 +165,10 @@ export default function NosotrosPage() {
               <h2 className="text-2xl font-bold">Misión</h2>
             </div>
             <p>
-              Promover el desarrollo integral de los ingenieros en minas del Ecuador, fomentando la ética profesional,
-              la actualización técnica y científica, y el compromiso con una minería responsable y sostenible.
+              Promover el desarrollo integral de los ingenieros en minas del
+              Ecuador, fomentando la ética profesional, la actualización técnica
+              y científica, y el compromiso con una minería responsable y
+              sostenible.
             </p>
           </div>
           <div className="bg-muted p-8 rounded-lg shadow-sm border-l-4 border-primary">
@@ -155,9 +177,10 @@ export default function NosotrosPage() {
               <h2 className="text-2xl font-bold">Visión</h2>
             </div>
             <p>
-              Ser una organización líder y referente en el ámbito minero ecuatoriano, reconocida por su compromiso con
-              la excelencia profesional, la innovación y la defensa de los principios técnicos y éticos de la ingeniería
-              en minas.
+              Ser una organización líder y referente en el ámbito minero
+              ecuatoriano, reconocida por su compromiso con la excelencia
+              profesional, la innovación y la defensa de los principios técnicos
+              y éticos de la ingeniería en minas.
             </p>
           </div>
         </div>
@@ -178,7 +201,11 @@ export default function NosotrosPage() {
         {/* Accordion para Valores y Principios */}
         <Accordion type="single" collapsible className="w-full">
           {valoresYPrincipios.map((valor) => (
-            <AccordionItem key={valor.id} value={valor.id} className="border rounded-lg mb-4 overflow-hidden">
+            <AccordionItem
+              key={valor.id}
+              value={valor.id}
+              className="border rounded-lg mb-4 overflow-hidden"
+            >
               <AccordionTrigger className="px-6 py-4 hover:no-underline bg-muted/50 hover:bg-muted group">
                 <div className="flex items-center gap-4">
                   <div className="text-primary transition-colors duration-300 group-hover:text-primary/80">
@@ -189,7 +216,7 @@ export default function NosotrosPage() {
                   </h3>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="px-6 py-4 text-muted-foreground">
+              <AccordionContent className="px-6 py-4 text-gray-700 text-base">
                 <p className="pl-14">{valor.description}</p>
               </AccordionContent>
             </AccordionItem>
@@ -200,7 +227,9 @@ export default function NosotrosPage() {
       <section id="objetivos" className="mb-16">
         <div className="flex items-center space-x-2 mb-6">
           <div className="h-1 w-10 bg-primary"></div>
-          <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Nuestras Metas</span>
+          <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+            Nuestras Metas
+          </span>
         </div>
         <div className="flex items-center gap-3 mb-6">
           <CheckCircle className="h-6 w-6 text-primary" />
@@ -227,19 +256,28 @@ export default function NosotrosPage() {
       <section className="text-center py-8 px-4 bg-muted rounded-lg">
         <h2 className="text-3xl font-bold mb-6">¿Quieres ser parte de AIME?</h2>
         <p className="max-w-2xl mx-auto mb-8">
-          Únete a la comunidad de profesionales de la ingeniería de minas más importante de Ecuador. Accede a beneficios
-          exclusivos, oportunidades de networking y desarrollo profesional.
+          Únete a la comunidad de profesionales de la ingeniería de minas más
+          importante de Ecuador. Accede a beneficios exclusivos, oportunidades
+          de networking y desarrollo profesional.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" asChild className="transition-all duration-300 hover:scale-105">
+          <Button
+            size="lg"
+            asChild
+            className="transition-all duration-300 hover:scale-105"
+          >
             <Link href="#membresia">Hazte Miembro</Link>
           </Button>
-          <Button variant="outline" size="lg" asChild className="transition-all duration-300 hover:scale-105">
+          <Button
+            variant="outline"
+            size="lg"
+            asChild
+            className="transition-all duration-300 hover:scale-105"
+          >
             <Link href="/contacto">Contáctanos</Link>
           </Button>
         </div>
       </section>
     </main>
-  )
+  );
 }
-

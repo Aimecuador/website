@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #f2a524;
+  --color-primary: #f5a623;
   --color-secondary: #191013;
+  --color-muted: #fff5e4;
 
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
@@ -15,13 +16,13 @@
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
 
-  --primary: 32 89% 55%;
+  --primary: 40 89% 54%;
   --primary-foreground: 210 40% 98%;
 
   --secondary: 345 14% 8%;
   --secondary-foreground: 210 40% 98%;
 
-  --muted: 210 40% 96.1%;
+  --muted: 37.77 100% 95%; /*ffe8c1*/
   --muted-foreground: 215.4 16.3% 46.9%;
 
   --accent: 210 40% 96.1%;
